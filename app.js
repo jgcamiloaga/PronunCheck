@@ -1,18 +1,18 @@
-// 1. Cargar las palabras desde el archivo JSON
+//Cargar las palabras desde el archivo JSON
 let palabras = [];
 
-fetch('words.json')  // Asegúrate de que esta ruta sea correcta
+fetch('words.json')
     .then(response => response.json())
     .then(data => {
         palabras = data.palabras;
-        console.log('Palabras cargadas:', palabras);  // Verificar que las palabras se carguen
-        seleccionarPalabraAleatoria();  // Seleccionar una palabra después de cargarlas
+        console.log('Palabras cargadas:', palabras);
+        seleccionarPalabraAleatoria();  // Seleccionar una palabra
     })
     .catch(error => console.error('Error al cargar las palabras:', error));
 
 let palabraSeleccionada = '';
 
-// 2. Seleccionar una palabra aleatoria
+//Seleccionar una palabra aleatoria
 function seleccionarPalabraAleatoria() {
     if (palabras.length > 0) {
         const indiceAleatorio = Math.floor(Math.random() * palabras.length);
@@ -30,15 +30,14 @@ let selectedVoice = null;
 // Cargar voces disponibles
 function cargarVoces() {
     availableVoices = window.speechSynthesis.getVoices();
-    selectedVoice = availableVoices.find(voice => voice.lang === 'en-US'); // Selecciona una voz en inglés
+    selectedVoice = availableVoices.find(voice => voice.lang === 'en-US');
 }
 
-// Asegurarse de que las voces estén cargadas
 window.speechSynthesis.onvoiceschanged = function() {
     cargarVoces();
 };
 
-// 3. Función para escuchar la pronunciación correcta
+//Función para escuchar la pronunciación correcta
 function reproducirPronunciacion() {
     if (palabraSeleccionada) {
         const synth = window.speechSynthesis;
@@ -51,8 +50,8 @@ function reproducirPronunciacion() {
         }
 
         // Ajustar velocidad y tono
-        utterThis.rate = 0.9;  // Velocidad (1 es el valor por defecto)
-        utterThis.pitch = 1.0; // Tono (1 es el valor por defecto)
+        utterThis.rate = 0.9;
+        utterThis.pitch = 1.0;
 
         synth.speak(utterThis);
     } else {
@@ -60,7 +59,7 @@ function reproducirPronunciacion() {
     }
 }
 
-// 4. Función para escuchar la pronunciación del usuario
+//Función para escuchar la pronunciación del usuario
 function iniciarReconocimiento() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -88,7 +87,7 @@ function iniciarReconocimiento() {
     };
 }
 
-// 5. Función para verificar la pronunciación
+//Función para verificar la pronunciación
 function verificarPronunciacion(userAttempt) {
     const mensajeResultado = document.getElementById('resultMessage');
     
