@@ -19,6 +19,7 @@ body {
 main {
   background-color: #fff;
   border-radius: 10px;
+  margin-bottom: 20px;
   padding: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   max-width: 500px;
@@ -72,7 +73,7 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 15px;
-  flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 button {
@@ -123,14 +124,20 @@ button:disabled {
   background-color: #ffebee;
 }
 
-footer {
-  text-align: center;
-  margin-top: 20px;
+footer p {
+  font-size: 1rem;
+  color: #777;
 }
 
-footer p {
-  font-size: 0.9rem;
-  color: #999;
+footer a {
+  color: #777;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Media Queries */
@@ -174,5 +181,9 @@ footer p {
   button {
     font-size: 0.8rem;
     padding: 6px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
   }
 }
