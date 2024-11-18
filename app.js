@@ -1,7 +1,7 @@
 //Cargar las palabras desde el archivo JSON
 let palabras = [];
 
-fetch("words.json")
+fetch("fruits.json")
   .then((response) => response.json())
   .then((data) => {
     palabras = data.palabras;
@@ -71,6 +71,8 @@ function iniciarReconocimiento() {
     return;
   }
 
+  activarBoton();
+
   const recognition = new SpeechRecognition();
   recognition.lang = "en-US";
   recognition.interimResults = false;
@@ -92,17 +94,36 @@ function iniciarReconocimiento() {
   };
 }
 
+//Función para botón activo
+const btnGrabar = document.getElementById("startRecognition");
+
+function activarBoton() {
+  btnGrabar.textContent = "🎙️ Listening...";
+  btnGrabar.style.backgroundColor = "#f44336";
+  btnGrabar.disabled = true;
+}
+
+//Función para botón inactivo
+function desactivarBoton() {
+  btnGrabar.textContent = "🎤 Start Recording";
+  btnGrabar.style.backgroundColor = "#4caf50";
+  btnGrabar.disabled = false;
+}
+
 //Función para verificar la pronunciación
 function verificarPronunciacion(userAttempt) {
   const mensajeResultado = document.getElementById("resultMessage");
 
-  if (userAttempt.toLowerCase() === palabraSeleccionada.toLowerCase()) {
+  // Normalizar las cadenas para evitar errores de comparación
+  if (userAttempt.trim().toLowerCase() === palabraSeleccionada.trim().toLowerCase()) {
     mensajeResultado.textContent = "¡Correcto!";
     mensajeResultado.className = "success";
   } else {
     mensajeResultado.textContent = "Inténtalo de nuevo.";
     mensajeResultado.className = "fail";
   }
+
+  desactivarBoton();
 }
 
 // 6. Eventos para los botones
