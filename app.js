@@ -37,10 +37,14 @@ window.speechSynthesis.onvoiceschanged = function () {
   cargarVoces();
 };
 
-//Función para escuchar la pronunciación correcta
+// Función para escuchar la pronunciación correcta
 function reproducirPronunciacion() {
   if (palabraSeleccionada) {
     const synth = window.speechSynthesis;
+
+    // Detener cualquier reproducción en curso
+    synth.cancel();
+
     const utterThis = new SpeechSynthesisUtterance(palabraSeleccionada);
     utterThis.lang = "en-US"; // Configurar idioma inglés
 
