@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PronunCheck</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" href="img/icon.ico" />
+  </head>
+  <body>
+    <header>
+      <h1><span>Pronun</span>check</h1>
+    </header>
+
+    <main>
+      <!-- 1. Palabra seleccionada -->
+      <section id="word-section">
+        <h2>Word to Pronounce:</h2>
+        <div id="word" class="word-display">Loading...</div>
+      </section>
+
+      <!-- 2. Botón para reproducir la pronunciación -->
+      <section id="controls-section">
+        <button id="playPronunciation" class="btn-pronunciation">
+          🔊 Listen Pronunciation
+        </button>
+        <button id="startRecognition" class="btn-recording">
+          🎙️ Start Recording
+        </button>
+      </section>
+
+      <!-- 3. Mostrar el intento del usuario -->
+      <section id="attempt-section">
+        <h3>Your Pronunciation:</h3>
+        <div id="userAttempt" class="attempt-display">
+          Your attempt will appear here...
+        </div>
+      </section>
+
+      <!-- 4. Resultado del intento -->
+      <section id="result-section">
+        <h3>Result:</h3>
+        <div id="resultMessage" class="result-display"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; Creado por
+        <a href="https://github.com/jgcamiloaga">jgcamiloaga</a>
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
