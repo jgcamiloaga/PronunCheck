@@ -1,0 +1,124 @@
+{
+  "categories": [
+    {
+      "category": "Fruits",
+      "words": [
+        "Apple",
+        "Banana",
+        "Cherry",
+        "Grape",
+        "Orange",
+        "Peach",
+        "Pear",
+        "Pineapple",
+        "Strawberry",
+        "Watermelon"
+      ]
+    },
+    {
+      "category": "Clothes",
+      "words": [
+        "Shirt",
+        "Pants",
+        "Skirt",
+        "Dress",
+        "Hat",
+        "Shoes",
+        "Scarf",
+        "Jacket",
+        "Socks",
+        "Gloves"
+      ]
+    },
+    {
+      "category": "Technology",
+      "words": [
+        "Computer",
+        "Smartphone",
+        "Tablet",
+        "Keyboard",
+        "Monitor",
+        "Mouse",
+        "Headphones",
+        "Charger",
+        "Camera",
+        "Router"
+      ]
+    },
+    {
+      "category": "Sports",
+      "words": [
+        "Soccer",
+        "Basketball",
+        "Tennis",
+        "Baseball",
+        "Volleyball",
+        "Swimming",
+        "Running",
+        "Cycling",
+        "Golf",
+        "Hockey"
+      ]
+    },
+    {
+      "category": "Action",
+      "words": [
+        "Run",
+        "Jump",
+        "Throw",
+        "Kick",
+        "Punch",
+        "Dive",
+        "Shoot",
+        "Climb",
+        "Crawl",
+        "Slide"
+      ]
+    },
+    {
+      "category": "Puzzle",
+      "words": [
+        "Riddle",
+        "Maze",
+        "Crossword",
+        "Sudoku",
+        "Jigsaw",
+        "Enigma",
+        "Logic",
+        "Pattern",
+        "Clue",
+        "Solve"
+      ]
+    },
+    {
+      "category": "RPG",
+      "words": [
+        "Warrior",
+        "Mage",
+        "Quest",
+        "Dungeon",
+        "Dragon",
+        "Armor",
+        "Potion",
+        "Sword",
+        "Guild",
+        "Magic"
+      ]
+    },
+    {
+      "category": "Racing",
+      "words": [
+        "Car",
+        "Bike",
+        "Track",
+        "Speed",
+        "Lap",
+        "Turbo",
+        "Finish",
+        "Helmet",
+        "Wheel",
+        "Engine"
+      ]
+    }
+  ]
+}
