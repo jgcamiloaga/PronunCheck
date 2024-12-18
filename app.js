@@ -14,7 +14,8 @@ enlacesCategorias.forEach((enlace) => {
 });
 
 if (
-  window.location.pathname.includes("game.html")
+  window.location.pathname.endsWith("game.html") || 
+  window.location.pathname.endsWith("game")
 ) {
   // Recuperar la categoría seleccionada desde localStorage
   const categoriaSeleccionada = localStorage.getItem("categoriaSeleccionada");
