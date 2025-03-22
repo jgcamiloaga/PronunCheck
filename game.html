@@ -1,53 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PronunCheck</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <title>PronunCheck - Juego</title>
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="img/icon.ico" />
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="theme-toggle">
+      <span class="theme-icon light-icon">☀️</span>
+      <span class="theme-icon dark-icon">🌙</span>
+    </div>
+
     <header>
-      <h1><span>Pronun</span>check</h1>
+      <div class="logo">
+        <h1><span class="accent">Pronun</span>Check</h1>
+      </div>
+      <div class="nav-buttons">
+        <a href="index.html" class="btn-back">
+          <span class="back-icon">←</span> Volver a categorías
+        </a>
+      </div>
     </header>
 
-    <main>
+    <main class="game-container">
+      <div class="category-badge" id="currentCategory">Categoría</div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text">
+          <span id="correctCount">0</span> correctas de
+          <span id="totalAttempts">0</span> intentos
+        </div>
+      </div>
+
       <!-- 1. Palabra seleccionada -->
-      <section id="word-section">
-        <h2>Word to Pronounce:</h2>
-        <div id="word" class="word-display">Loading...</div>
+      <section id="word-section" class="card">
+        <h2>Palabra a pronunciar:</h2>
+        <div id="word" class="word-display">Cargando...</div>
+        <div class="word-hint">
+          Haz clic en el botón de audio para escuchar la pronunciación correcta
+        </div>
       </section>
 
-      <!-- 2. Botón para reproducir la pronunciación -->
-      <section id="controls-section">
+      <!-- 2. Botones para reproducir y grabar -->
+      <section id="controls-section" class="card">
         <button id="playPronunciation" class="btn-pronunciation">
-          🔊 Listen Pronunciation
+          <span class="btn-icon">🔊</span> Escuchar pronunciación
         </button>
         <button id="startRecognition" class="btn-recording">
-          🎙️ Start Recording
+          <span class="btn-icon">🎙️</span> Iniciar grabación
         </button>
       </section>
 
       <!-- 3. Mostrar el intento del usuario -->
-      <section id="attempt-section">
-        <h3>Your Pronunciation:</h3>
+      <section id="attempt-section" class="card">
+        <h3>Tu pronunciación:</h3>
         <div id="userAttempt" class="attempt-display">
-          Your attempt will appear here...
+          Tu intento aparecerá aquí...
         </div>
       </section>
 
       <!-- 4. Resultado del intento -->
-      <section id="result-section">
-        <h3>Result:</h3>
+      <section id="result-section" class="card">
+        <h3>Resultado:</h3>
         <div id="resultMessage" class="result-display"></div>
+        <button id="nextWord" class="btn-next hidden">
+          <span class="btn-icon">→</span> Siguiente palabra
+        </button>
       </section>
     </main>
 
     <footer>
-      <p>
+      <p class="copyright">
         &copy; Creado por
-        <a href="https://github.com/jgcamiloaga">jgcamiloaga</a>
+        <a href="https://github.com/jgcamiloaga" target="_blank">jgcamiloaga</a>
       </p>
     </footer>
 
