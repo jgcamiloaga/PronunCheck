@@ -1,35 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Categories</title>
-    <link rel="stylesheet" href="styles/stylecate.css">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mejora tu pronunciación en inglés" />
+    <meta
+      name="keywords"
+      content="pronunciación, inglés, palabras, categorías"
+    />
+    <title>PronunCheck - Categorías</title>
+    <link rel="stylesheet" href="styles/main.css" />
     <link rel="icon" href="img/icon.ico" />
-</head>
-<body>
+    <!-- Fuente Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="theme-toggle">
+      <span class="theme-icon light-icon">☀️</span>
+      <span class="theme-icon dark-icon">🌙</span>
+    </div>
+
     <header>
-        <h1>Game Categories</h1>
+      <div class="logo">
+        <h1><span class="accent">Pronun</span>Check</h1>
+      </div>
+      <p class="tagline">Mejora tu pronunciación en inglés</p>
     </header>
+
     <main>
-        <section class="categories-grid">
-            <a href="game.html" class="category" data-category="Fruits">Fruits</a>
-            <a href="game.html" class="category" data-category="Clothes">Clothes</a>
-            <a href="game.html" class="category" data-category="Technology">Technology</a>
-            <a href="game.html" class="category" data-category="Sports">Sports</a>
-            <a href="game.html" class="category" data-category="Action">Action</a>
-            <a href="game.html" class="category" data-category="Puzzle">Puzzle</a>
-            <a href="game.html" class="category" data-category="RPG">RPG</a>
-            <a href="game.html" class="category" data-category="Racing">Racing</a>
-        </section>
+      <section class="intro">
+        <h2>Selecciona una categoría</h2>
+        <p>
+          Elige una categoría para practicar la pronunciación de palabras en
+          inglés.
+        </p>
+      </section>
+
+      <section class="categories-grid">
+        <a href="game.html" class="category" data-category="Fruits">
+          <div class="category-icon">🍎</div>
+          <h3>Frutas</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Clothes">
+          <div class="category-icon">👕</div>
+          <h3>Ropa</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Technology">
+          <div class="category-icon">💻</div>
+          <h3>Tecnología</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Sports">
+          <div class="category-icon">⚽</div>
+          <h3>Deportes</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Action">
+          <div class="category-icon">🏃</div>
+          <h3>Acciones</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Puzzle">
+          <div class="category-icon">🧩</div>
+          <h3>Puzzles</h3>
+        </a>
+        <a href="game.html" class="category" data-category="RPG">
+          <div class="category-icon">🧙</div>
+          <h3>RPG</h3>
+        </a>
+        <a href="game.html" class="category" data-category="Racing">
+          <div class="category-icon">🏎️</div>
+          <h3>Carreras</h3>
+        </a>
+      </section>
     </main>
+
     <footer>
-      <p>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-value" id="totalWords">0</span>
+          <span class="stat-label">Palabras practicadas</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="correctWords">0</span>
+          <span class="stat-label">Pronunciaciones correctas</span>
+        </div>
+      </div>
+      <p class="copyright">
         &copy; Creado por
-        <a href="https://github.com/jgcamiloaga">jgcamiloaga</a>
+        <a href="https://github.com/jgcamiloaga" target="_blank">jgcamiloaga</a>
       </p>
     </footer>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
