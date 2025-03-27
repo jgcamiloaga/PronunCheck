@@ -64,6 +64,13 @@ enlacesCategorias.forEach((enlace) => {
   });
 });
 
+// Función para detectar si es un dispositivo móvil
+function esMobile() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
 // Lógica específica para la página de juego
 if (
   window.location.pathname.endsWith("game.html") ||
@@ -199,6 +206,13 @@ if (
 
   // Función para escuchar la pronunciación del usuario
   function iniciarReconocimiento() {
+    // Verificar si es un dispositivo móvil
+    if (!esMobile()) {
+      // Mostrar mensaje específico para PC
+      mostrarMensajePC();
+      return;
+    }
+
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -211,6 +225,11 @@ if (
     }
 
     activarBoton();
+
+    // Mostrar mensaje de ayuda
+    const userAttemptElement = document.getElementById("userAttempt");
+    userAttemptElement.textContent = "Habla ahora...";
+    userAttemptElement.classList.add("recording");
 
     const recognition = new SpeechRecognition();
     recognition.lang = "en-US";
@@ -228,6 +247,7 @@ if (
       const newUserAttempt = userAttempt.replace(/\./g, "");
 
       document.getElementById("userAttempt").textContent = `${newUserAttempt}`;
+      document.getElementById("userAttempt").classList.remove("recording");
 
       verificarPronunciacion(userAttempt);
 
@@ -238,12 +258,51 @@ if (
 
     recognition.onerror = function (event) {
       console.error("Error en el reconocimiento:", event.error);
+
+      // Manejar específicamente el error "no-speech"
+      if (event.error === "no-speech") {
+        const userAttemptElement = document.getElementById("userAttempt");
+        userAttemptElement.textContent =
+          "No se detectó audio. Por favor, habla más fuerte o acércate al micrófono.";
+        userAttemptElement.classList.add("error");
+
+        // Quitar la clase de error después de 3 segundos
+        setTimeout(() => {
+          userAttemptElement.classList.remove("error");
+        }, 3000);
+      }
+
       desactivarBoton();
     };
 
     recognition.onend = function () {
+      document.getElementById("userAttempt").classList.remove("recording");
       desactivarBoton();
     };
+  }
+
+  // Función para mostrar mensaje específico para PC
+  function mostrarMensajePC() {
+    const mensajePC = document.createElement("div");
+    mensajePC.className = "pc-message";
+    mensajePC.innerHTML = `
+      <div class="pc-message-content">
+        <div class="mobile-icon">📱</div>
+        <h3>Reconocimiento de voz optimizado para móviles</h3>
+        <p>Esta función funciona mejor en dispositivos móviles. Para una experiencia óptima, accede desde tu smartphone o tablet.</p>
+        <button id="closeMessage" class="btn-close">Entendido</button>
+      </div>
+    `;
+
+    document.body.appendChild(mensajePC);
+
+    // Evento para el botón de cerrar
+    document.getElementById("closeMessage").addEventListener("click", () => {
+      mensajePC.classList.add("fade-out");
+      setTimeout(() => {
+        mensajePC.remove();
+      }, 300);
+    });
   }
 
   // Función para botón activo
