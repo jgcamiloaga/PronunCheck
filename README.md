@@ -1,4 +1,4 @@
-# PronunCheck 🔰
+# PronunCheck
 
 PronunCheck es una aplicación interactiva diseñada para ayudar a los usuarios a mejorar su pronunciación en inglés. Ofrece una forma precisa y atractiva de practicar la pronunciación mediante el uso de la API de Web Speech y la síntesis de voz.
 
