@@ -50,6 +50,10 @@ PronunCheck es una aplicación web interactiva diseñada para ayudar a los usuar
 - **Diseño**: CSS personalizado con tema claro/oscuro
 - **Fuentes**: Google Fonts (Poppins)
 
+## 📱 Capturas de pantalla
+
+![PronunCheck App Screenshot](https://i.postimg.cc/c4sJzqKG/Captura-de-pantalla-2025-01-06-144125.png)
+
 ## 🌐 Demo
 
 Consulta la versión en vivo: [Demo de PronunCheck](https://pronuncheck.netlify.app)
